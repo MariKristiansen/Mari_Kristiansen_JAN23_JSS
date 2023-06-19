@@ -1,8 +1,11 @@
 <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light position-fixed w-100 fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">Meme Central</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="/memes">
+            <img src="../../images/logo.png" width="70" alt="logo">
+        </a>
+        <div>Memes Central</div>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
@@ -13,9 +16,31 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/memes">Memes</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Sign in</a>
-                </li>
+
+                <% if (!user) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Sign in</a>
+                    </li>
+                    <li class="nav-item">
+                        <p style="background-color: #baf7ba; border-radius: 5px; padding: 3px; font-size: 80%;">
+                            Guest
+                        </p>
+                    </li>
+                <% } %>
+
+                <% if (user) { %>
+                        <li class="nav-item">
+                            <form action="/login/logout" method="post">
+                                <button class="btn" type="submit">Sign out</button>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <p style="background-color: #baf7ba; border-radius: 5px; padding: 3px; font-size: 80%;">
+                                Hey <%=user.username%>
+                            </p>
+                        </li>
+                <% } %>
+
             </ul>
         </div>
     </div>

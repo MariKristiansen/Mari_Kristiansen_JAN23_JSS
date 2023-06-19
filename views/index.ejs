@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title>Memes Central</title>
-  <%- include('./partials/head.ejs') %>
-</head>
+  <head>
+    <title>Memes Central</title>
+    <%- include('./partials/head.ejs') %>
+  </head>
 
-<body class="position-relative" data-bs-spy="scroll">
-  <%- include('./partials/navbar.ejs') %>
-    <header id="home">
-      <div class="container-fluid header-content">
-        <div class="row">
-          <div class="col">
-            <div class="content-box text-center text-light">
-              <h1>Meme Central</h1>
+  <body class="position-relative" data-bs-spy="scroll">
+    <%- include('./partials/navbar.ejs') %>
+      <header id="home">
+        <div class="container-fluid header-content">
+          <div class="row">
+            <div class="col">
+              <div class="content-box text-center text-light">
+                <a class="navbar-brand" href="/memes">
+                  <h1>Meme Central</h1>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </header>
-    <%- include('./partials/scripts.ejs') %>
-</body>
+      </header>
+      <%- include('./partials/scripts.ejs') %>
+  </body>
 
 </html>

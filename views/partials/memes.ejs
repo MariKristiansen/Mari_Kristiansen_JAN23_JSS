@@ -1,0 +1,49 @@
+<section class="container">
+
+    <div class="input-group mt-5 mb-3">
+        <input type="text" id="searchInput" onkeyup="search()" class="form-control" placeholder="Search for memes">     <!--Source link: https://www.w3schools.com/howto/howto_js_filter_lists.asp-->
+        <button class="btn btn-outline-secondary">Search</button>
+    </div>
+
+    <table class="table" id="table">
+        <thead>
+            <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
+            <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(function(meme){ %>
+                <tr id="<%=meme.id%>">
+                    <th scope="row" class="data" style="font-weight: normal !important;">
+                        <%=meme.id%>
+                    </th>
+                    <td class="data">
+                        <%=meme.name%>
+                    </td>
+                    <td>
+                        <img src="<%=meme.url%>" style="width: 20%;" alt="meme">
+                    </td>
+                    <td class="data" style="display:none;">
+                        <%=meme.url%>
+                    </td>
+                    <td class="data" style="display:none;">
+                        <%=meme.width%>
+                    </td>
+                    <td class="data" style="display:none;">
+                        <%=meme.height%>
+                    </td>
+                    <% if (!user) { %>
+                    <% } %>
+                    <% if (user) { %>
+                    <td>
+                        <button class="btn btn-outline-secondary" onclick="memeDetails()">Details</button>
+                    </td>
+                    <% } %>
+                </tr>
+            <% });%>
+        </tbody>
+    </table>
+</section>
