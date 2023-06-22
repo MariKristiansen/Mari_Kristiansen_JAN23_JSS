@@ -6,3 +6,7 @@ body {
 a {
   color: #00B7FF;
 }
+
+tr.viewed-row {
+  background-color: rgb(224, 221, 221);
+}

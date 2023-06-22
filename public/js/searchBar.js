@@ -1,4 +1,6 @@
-function search() {     //Source: https://www.w3schools.com/howto/howto_js_filter_lists.asp
+//Source: https://www.w3schools.com/howto/howto_js_filter_lists.asp
+
+function search() {
     var input, filter, table, tr, td, i, textValue;
     input = document.getElementById('searchInput');
     filter = input.value.toUpperCase();

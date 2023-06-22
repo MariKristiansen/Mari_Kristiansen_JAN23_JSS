@@ -1,3 +1,5 @@
+// Source: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
 async function memeDetails() {
     var rowId = event.target.parentNode.parentNode.id;
     var meme = document.getElementById(rowId).querySelectorAll('.data');

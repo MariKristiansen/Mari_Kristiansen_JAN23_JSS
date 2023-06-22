@@ -16,7 +16,7 @@
         </thead>
         <tbody>
             <% data.forEach(function(meme){ %>
-                <tr id="<%=meme.id%>">
+                <tr id="<%=meme.id%>" class="<%= meme.viewed ? 'viewed-row' : '' %>">
                     <th scope="row" class="data" style="font-weight: normal !important;">
                         <%=meme.id%>
                     </th>
@@ -39,7 +39,7 @@
                     <% } %>
                     <% if (user) { %>
                     <td>
-                        <button class="btn btn-outline-secondary" onclick="memeDetails()">Details</button>
+                        <button class="btn btn-outline-secondary details-button" onclick="memeDetails()">Details</button>
                     </td>
                     <% } %>
                 </tr>
